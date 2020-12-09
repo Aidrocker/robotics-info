@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//Components
+import ItemsList from './components/items-list'
+
+
+//Material UI
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -14,7 +19,6 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import FormControl from '@material-ui/core/FormControl';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FilledInput from '@material-ui/core/FilledInput';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 const drawerWidth = 240;
@@ -76,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
+export default function App() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -145,17 +149,11 @@ export default function PersistentDrawerLeft() {
           />
         </FormControl>
       </Drawer>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-      </main>
+      <ItemsList open={open}/>
     </div>
   );
 }
 ReactDOM.render(
-  <PersistentDrawerLeft />,
+  <App />,
   document.getElementById('root')
 );

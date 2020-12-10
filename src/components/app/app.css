@@ -1,0 +1,12 @@
+.app{
+    display: flex;
+}
+
+.drawer{
+    width: 20rem;
+    flex-shrink: 0;
+}
+
+.drawerPaper{
+    width: 16rem;
+}

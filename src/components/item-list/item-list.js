@@ -1,14 +1,19 @@
+import React from 'react';
+
+//Style
+import './item-list.css'
+
 const ItemList = () => {
     return (
-        <div class='list-item'>
-            <div class='list-item__title'>
+        <div className='item-list'>
+            <div className='item-list__title'>
                 <h2>Article title</h2>
             </div>
-            <div class='list-item__info'>
-                <div class='list-item__info__author'>
+            <div className='item-list__info'>
+                <div className='item-list__info__author'>
                     <h3>Article Author</h3>
                 </div>
-                <div class='list-item__info__author'>
+                <div className='item-list__info__date'>
                     <h3>Article Date</h3>
                 </div>
             </div>

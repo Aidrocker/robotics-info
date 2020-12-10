@@ -1,0 +1,13 @@
+.item-list{
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.item-list__info{
+    display: flex;
+}
+
+.item-list__info__date{
+    margin-left: 3rem;
+}

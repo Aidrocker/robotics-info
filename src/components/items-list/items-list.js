@@ -1,6 +1,14 @@
+import React from 'react';
+
+//Style
+import './items-list.css'
+
+//Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import ItemList from '../item-list';
 import clsx from 'clsx';
+
+
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -31,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const ItemsList = ({open}) => {
+const ItemsList = ({ open }) => {
     const classes = useStyles();
 
     return (
@@ -41,13 +49,13 @@ const ItemsList = ({open}) => {
             })}
         >
             <div className={classes.drawerHeader} />
-            <div class='robotics-info'>
+            <div className='robotics-info'>
 
-                <div class='robotics-info__title'>
+                <div className='robotics-info__title'>
                     <h1>Список статей по робототехнике</h1>
                 </div>
 
-                <div class='robotics-info__list-items'>
+                <div className='robotics-info__list-items'>
                     <ItemList />
                 </div>
             </div>

@@ -8,6 +8,11 @@
     display: flex;
 }
 
+.item-list__info__author, .item-list__info__date{
+    display: flex;
+    align-items: center;
+}
+
 .item-list__info__date{
     margin-left: 3rem;
 }

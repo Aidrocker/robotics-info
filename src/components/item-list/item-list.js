@@ -1,5 +1,6 @@
 import React from 'react';
-
+import PersonIcon from '@material-ui/icons/Person';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 //Style
 import './item-list.css'
 
@@ -11,9 +12,11 @@ const ItemList = () => {
             </div>
             <div className='item-list__info'>
                 <div className='item-list__info__author'>
+                    <PersonIcon/>
                     <h3>Article Author</h3>
                 </div>
                 <div className='item-list__info__date'>
+                    <CalendarTodayIcon/>
                     <h3>Article Date</h3>
                 </div>
             </div>

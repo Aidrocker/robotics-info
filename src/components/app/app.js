@@ -2,7 +2,8 @@ import React from 'react';
 
 //Components
 import ItemsList from '../items-list'
-import SearchPanel from '../search-panel'
+import SearchPanel from '../search-panel';
+import ItemPage from '../item-page'
 //Style
 import './app.css'
 //Material UI
@@ -122,7 +123,9 @@ export default function App() {
 
         <SearchPanel />
       </Drawer>
-      <ItemsList open={open} />
+      {/* <ItemsList open={open} /> */}
+      <ItemPage open={open}/>
+      
     </div>
   );
 }

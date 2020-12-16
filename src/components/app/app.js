@@ -22,6 +22,64 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const drawerWidth = 240;
 
+const data = [
+  {
+    title: "Математические основы квантовой механики",
+    author: "Дж. фон Нейманн",
+    date: {
+      day: 1,
+      month: 3,
+      year: 2020
+    },
+    content: "Article Content...",
+    link: "/article-link-1"
+  },
+  {
+    title: "Математические основы квантовой механики",
+    author: "Дж. фон Нейманн",
+    date: {
+      day: 1,
+      month: 3,
+      year: 2020
+    },
+    content: "Article Content...",
+    link: "/article-link-1"
+  },
+  {
+    title: "Математические основы квантовой механики",
+    author: "Дж. фон Нейманн",
+    date: {
+      day: 1,
+      month: 3,
+      year: 2020
+    },
+    content: "Article Content...",
+    link: "/article-link-1"
+  },
+  {
+    title: "Математические основы квантовой механики",
+    author: "Дж. фон Нейманн",
+    date: {
+      day: 1,
+      month: 3,
+      year: 2020
+    },
+    content: "Article Content...",
+    link: "/article-link-1"
+  },
+  {
+    title: "Математические основы квантовой механики",
+    author: "Дж. фон Нейманн",
+    date: {
+      day: 1,
+      month: 3,
+      year: 2020
+    },
+    content: "Article Content...",
+    link: "/article-link-1"
+  }
+]
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -123,9 +181,9 @@ export default function App() {
 
         <SearchPanel />
       </Drawer>
-      {/* <ItemsList open={open} /> */}
-      <ItemPage open={open}/>
-      
+      <ItemsList open={open} data={data} />
+      {/* <ItemPage open={open} /> */}
+
     </div>
   );
 }

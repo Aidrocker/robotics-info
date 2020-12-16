@@ -7,6 +7,7 @@ import './items-list.css'
 import { makeStyles } from '@material-ui/core/styles';
 import ItemList from '../item-list';
 import clsx from 'clsx';
+import { render } from '@testing-library/react';
 
 
 
@@ -38,8 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
-const ItemsList = ({ open }) => {
+const ItemsList = ({ open, data }) => {
     const classes = useStyles();
 
     return (
@@ -56,7 +56,14 @@ const ItemsList = ({ open }) => {
                 </div>
 
                 <div className='robotics-info__list-items'>
-                    <ItemList />
+                    {data.map((item, id) => {
+                        return(
+                            <div key={id}>
+                                <ItemList {...item} />
+                            </div>
+                            
+                        )
+                    })}
                 </div>
             </div>
         </main>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 //Components
 import ItemsList from '../items-list'
 import SearchPanel from '../search-panel';
@@ -25,8 +25,6 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const drawerWidth = 240;
-
-
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -78,7 +76,12 @@ const useStyles = makeStyles((theme) => ({
 export default function App() {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [text, setText] = useState("");
+
+  const handleText = (text) => {
+    setText(text)
+  }
   
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -126,12 +129,10 @@ export default function App() {
           </IconButton>
         </div>
         <Divider />
-
-        <SearchPanel />
+        <SearchPanel setText={handleText} />
       </Drawer>
-      <ItemsList open={open} data={data} />
+      <ItemsList open={open} data={data}/>
       {/* <ItemPage open={open} /> */}
-
     </div>
   );
 }

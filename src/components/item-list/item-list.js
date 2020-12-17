@@ -9,8 +9,6 @@ const ItemList = (props) => {
         title,
         author,
         date,
-        content,
-        link
     } = props;
     return (
         <div className='item-list'>

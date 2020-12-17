@@ -1,12 +1,20 @@
+import React, {useState} from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
 
 const SearchPanel = ({setText}) => {
+
+  const [text, onChangeText] = useState("")
   const handleSetText = (event) => {
     event.preventDefault();
-    setText(event.target.value)
+    onChangeText(event.target.value)
+  }
+
+  const onSetText = () => {
+    setText(text)
   }
 
   return (
@@ -17,7 +25,7 @@ const SearchPanel = ({setText}) => {
         placeholder="О чём статья ?"
         endAdornment={
           <InputAdornment position="end">
-            <SearchIcon/>
+            <Button variant="contained" onClick={onSetText}><SearchIcon/></Button>
           </InputAdornment>}
         aria-describedby="outlined-weight-helper-text"
         inputProps={{

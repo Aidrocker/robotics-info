@@ -133,6 +133,7 @@ export default function App() {
       </Drawer>
       <ItemsList open={open} data={data}/>
       {/* <ItemPage open={open} /> */}
+      {console.log(text)}
     </div>
   );
 }

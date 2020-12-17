@@ -78,7 +78,7 @@ const ItemsList = ({ open, data }) => {
                     ))}
                     <div className='items-list__pagination'>
                         <Pagination
-                            count={data.length}
+                            count={Math.ceil(data.length/itemsPerPage)}
                             defaultPage={1}
                             siblingCount={1}
                             onChange={handleChangePage}

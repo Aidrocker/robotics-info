@@ -1,6 +1,6 @@
-const data = [
+export default [
     {
-        title: "Математические основы квантовой механики",
+        title: "аематические основы квантовой механики",
         author: "Дж. фон Нейманн",
         date: {
             day: 1,
@@ -12,7 +12,7 @@ const data = [
     },
     {
         title: "Математические основы квантовой механики",
-        author: "Дж. фон Нейманн",
+        author: "Дж. он Нейманн",
         date: {
             day: 1,
             month: 3,
@@ -122,5 +122,3 @@ const data = [
     },
 
 ];
-
-export default data;

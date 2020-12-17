@@ -10,16 +10,17 @@ const SearchPanel = ({ setText }) => {
   const [text, onChangeText] = useState("")
   const handleSetText = (event) => {
     event.preventDefault();
-    onChangeText(event.target.value)
+    onChangeText(event.target.value);
   }
 
   const onSetText = () => {
     setText(text)
   }
+  
   document.onkeydown = (e) => {
     e = e || window.event;
-    if (e.keyCode == 13) {
-      setText(text)
+    if (e.keyCode === 13) {
+      setText(text);
     }
 
   }

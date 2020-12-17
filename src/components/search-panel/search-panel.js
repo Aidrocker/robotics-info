@@ -9,7 +9,6 @@ const SearchPanel = ({setText}) => {
     setText(event.target.value)
   }
 
-
   return (
     <FormControl variant="outlined">
       <OutlinedInput

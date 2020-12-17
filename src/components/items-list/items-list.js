@@ -7,9 +7,7 @@ import './items-list.css'
 import { makeStyles } from '@material-ui/core/styles';
 import ItemList from '../item-list';
 import clsx from 'clsx';
-import { render } from '@testing-library/react';
-
-
+import Pagination from '@material-ui/lab/Pagination';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -37,10 +35,24 @@ const useStyles = makeStyles((theme) => ({
         }),
         marginLeft: 0,
     },
+    ul: {
+        listStyle: 'none',
+        padding: 0,
+        margin: 0,
+        display: 'flex',
+    },
 }));
 
 const ItemsList = ({ open, data }) => {
     const classes = useStyles();
+    const [page, setPage] = React.useState(1);
+    const itemsPerPage = 3
+
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+
 
     return (
         <main
@@ -56,14 +68,24 @@ const ItemsList = ({ open, data }) => {
                 </div>
 
                 <div className='robotics-info__list-items'>
-                    {data.map((item, id) => {
-                        return(
-                            <div key={id}>
-                                <ItemList {...item} />
-                            </div>
-                            
-                        )
-                    })}
+                    {(itemsPerPage > 0
+                        ? data.slice((page-1) * itemsPerPage, (page-1) * itemsPerPage + itemsPerPage)
+                        : data
+                    ).map((item, id) => (
+                        <div key={id}>
+                            <ItemList {...item} />
+                        </div>
+                    ))}
+                    <div className='items-list__pagination'>
+                        <Pagination
+                            count={data.length}
+                            defaultPage={1}
+                            siblingCount={1}
+                            onChange={handleChangePage}
+                            page={page}
+                            boundaryCount={2} />
+
+                    </div>
                 </div>
             </div>
         </main>

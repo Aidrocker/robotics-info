@@ -1,11 +1,15 @@
 import React from 'react';
-
 //Components
 import ItemsList from '../items-list'
 import SearchPanel from '../search-panel';
-import ItemPage from '../item-page'
+import ItemPage from '../item-page';
+
+//Data
+import data from '../../data/article';
+
 //Style
-import './app.css'
+import './app.css';
+
 //Material UI
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -22,63 +26,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const drawerWidth = 240;
 
-const data = [
-  {
-    title: "Математические основы квантовой механики",
-    author: "Дж. фон Нейманн",
-    date: {
-      day: 1,
-      month: 3,
-      year: 2020
-    },
-    content: "Article Content...",
-    link: "/article-link-1"
-  },
-  {
-    title: "Математические основы квантовой механики",
-    author: "Дж. фон Нейманн",
-    date: {
-      day: 1,
-      month: 3,
-      year: 2020
-    },
-    content: "Article Content...",
-    link: "/article-link-1"
-  },
-  {
-    title: "Математические основы квантовой механики",
-    author: "Дж. фон Нейманн",
-    date: {
-      day: 1,
-      month: 3,
-      year: 2020
-    },
-    content: "Article Content...",
-    link: "/article-link-1"
-  },
-  {
-    title: "Математические основы квантовой механики",
-    author: "Дж. фон Нейманн",
-    date: {
-      day: 1,
-      month: 3,
-      year: 2020
-    },
-    content: "Article Content...",
-    link: "/article-link-1"
-  },
-  {
-    title: "Математические основы квантовой механики",
-    author: "Дж. фон Нейманн",
-    date: {
-      day: 1,
-      month: 3,
-      year: 2020
-    },
-    content: "Article Content...",
-    link: "/article-link-1"
-  }
-]
+
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -131,7 +79,7 @@ export default function App() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  
   const handleDrawerOpen = () => {
     setOpen(true);
   };

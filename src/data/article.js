@@ -25,7 +25,7 @@ export default [
         title: "Математические основы квантовой механики",
         author: "Дж. фон Нейманн",
         date: {
-            day: 1,
+            day: 2,
             month: 3,
             year: 2020
         },

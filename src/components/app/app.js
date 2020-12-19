@@ -101,18 +101,22 @@ export default function App() {
     return data.filter((item) => {
       if (item.title.toLowerCase().indexOf(text.toLowerCase()) > -1) {
         return item;
+      } 
+      if (item.author.toLowerCase().indexOf(text.toLowerCase()) > -1) {
+        return item;
       }
-      // } else if (item.title.indexOf(text) > -1) {
-      //   return item;
-      // } else if (item.date.day.indexOf(text) > -1) {
-      //   return item;
-      // } if (item.date.month.indexOf(text) > -1) {
-      //   return item;
-      // } if (item.date.year.indexOf(text) > -1) {
-      //   return item;
-      // } if (item.content.indexOf(text) > -1) {
-      //   return item;
-      // }
+      if (new Array(item.date.day.toString()).indexOf(text) > -1) {
+        return item;
+      }
+      if (new Array(item.date.month.toString()).indexOf(text) > -1) {
+        return item;
+      }
+      if (new Array(item.date.year.toString()).indexOf(text) > -1) {
+        return item;
+      } 
+      if (new Array(item.content.toString()).indexOf(text) > -1) {
+        return item;
+      }
     })
   }
 
@@ -170,6 +174,3 @@ export default function App() {
     </Router>
   );
 }
-
-{/* <Route path="/" component={<ItemsList open={open} data={searchData(data, text)} />} />
-        <Route path="/page" component={<ItemPage open={open} />} /> */}
